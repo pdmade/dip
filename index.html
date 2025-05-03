@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/fki4pxm.css">  
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: #f8f8f8;
+        }
+
+        body {
+            height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem;
+            font-family: "brandon-grotesque", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            background-color: white;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            padding: .1rem;
+            margin-top: .5rem;
+            background-color: black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 2rem;
+            padding: 5px;
+        }
+
+        main {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100%;
+            width: 100%;
+        }
+
+        .index nav ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 1rem;
+            transition: all 0.5s ease; /* Add transition */
+
+        }
+
+        .subpage nav ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0rem 1rem;
+            transition: all 0.5s ease; /* Add transition */
+
+        }
+
+        .index nav li {
+            display: flex;
+            align-items: baseline;
+            min-height: 4.4rem;
+        }
+
+        .index nav a .number {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-right: .5rem;
+        }
+
+        .subpage nav a .number {
+            font-size: .8rem;
+            margin-right: .5rem;
+            color: #d9d9d9;
+            transition: all 0.5s ease;
+        }
+
+        .index nav a {
+            text-decoration: none;
+            color: #000;
+            position: relative;
+            font-size: 4rem;
+            transition: all 0.5s ease;
+        }
+
+        .subpage nav a {
+            position: relative;
+            text-decoration: none;
+            color: #d9d9d9;
+            font-size: 2rem;
+            transition: all 0.5s ease;
+        }
+
+        .subpage nav a:hover, .subpage nav a:hover .number {
+            color: #000;
+        }
+        
+        .index nav a::after, .subpage nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.5s ease;
+        }
+
+        .index nav a:hover::after, .subpage nav a:hover::after {
+            width: 100%;
+        }
+
+        .subpage {
+        }
+    </style>
+</head>
+<body class="subpage">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#"><span class="number">01</span>Trademarks</a></li>
+                <li><a href="#"><span class="number">02</span>Custom Lettering</a></li>
+                <li><a href="#"><span class="number">03</span>Inkings + Rough Sketches</a></li>
+                <li><a href="#"><span class="number">04</span>Branding Systems</a></li>
+                <li><a href="#"><span class="number">05</span>Posters</a></li>
+                <li><a href="#"><span class="number">06</span>Published Writings</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="images/DP_monogram_website-white.svg" alt="Logo">
+        </div>
+    </header>
+    <main>
+
+    </main>
+
+    <script>
+        // Select all navigation list items
+        const navItems = document.querySelectorAll('nav ul li');
+
+        // Add click event listener to each item
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Change the body class to 'subpage'
+                document.body.className = 'subpage';
+            });
+        });
+
+        // Select the logo element
+        const logo = document.querySelector('.logo');
+
+        // Add click event listener to the logo
+        logo.addEventListener('click', () => {
+            // Change the body class to 'index'
+            document.body.className = 'index';
+        });
+    </script>
+</body>
+</html>
